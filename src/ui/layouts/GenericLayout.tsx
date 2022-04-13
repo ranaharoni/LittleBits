@@ -1,36 +1,24 @@
-import React, {ReactNode} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+/** @format */
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import React, { ReactNode } from "react";
+import { SafeAreaView, StatusBar, useColorScheme } from "react-native";
+
+import theme from "../theme";
 
 export interface GenericLayoutProps {
   children: ReactNode;
 }
 
-export const GenericLayout = ({children}: GenericLayoutProps) => {
-  const isDarkMode = useColorScheme() === 'dark';
+export const GenericLayout = ({ children }: GenericLayoutProps) => {
+  const isDarkMode = useColorScheme() === "dark";
 
   const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+    backgroundColor: theme.palette.background,
   };
 
   return (
     <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+      <StatusBar barStyle={isDarkMode ? "light-content" : "dark-content"} />
       {children}
     </SafeAreaView>
   );

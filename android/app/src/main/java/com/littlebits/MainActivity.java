@@ -1,5 +1,6 @@
 package com.littlebits;
 
+import android.os.Bundle;
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.ReactRootView;
@@ -13,6 +14,16 @@ public class MainActivity extends ReactActivity {
   @Override
   protected String getMainComponentName() {
     return "LittleBits";
+  }
+
+  /**
+   * ReactNavigation 6.x
+   * Overrides RN's default onCreate behavior.
+   * prevents ReactActivityDelegate.onCreate(savedInstanceState) from getting called.
+   */
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(null);
   }
 
   /**

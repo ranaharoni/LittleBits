@@ -4,10 +4,10 @@
   "useTabs": false,
   "semi": true,
   "trailingComma": "all",
-  "bracketSpacing": true,
   "arrowParens": "always",
-  "requirePragma": true,
-  "insertPragma": true,
   "bracketSameLine": true,
-  "singleQuote": false
+  "bracketSpacing": true,
+  "singleQuote": false,
+  "insertPragma": true,
+  "requirePragma": false
 }

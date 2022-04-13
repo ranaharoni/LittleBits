@@ -26,6 +26,7 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from "react-native/Libraries/NewAppScreen";
+import { addScreen } from "../../navigation/RootStack";
 
 const Section: React.FC<{
   title: string;
@@ -55,7 +56,7 @@ const Section: React.FC<{
   );
 };
 
-const App = () => {
+const NewAppScreen = () => {
   const isDarkMode = useColorScheme() === "dark";
 
   const backgroundStyle = {
@@ -112,4 +113,6 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+// addScreen({component: NewAppScreen});
+
+export default NewAppScreen;
