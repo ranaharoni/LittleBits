@@ -9,7 +9,7 @@ export const displaySortedRecipes = async (property?: string) => {
   try {
     const data = (await getRecipes()).map(adapter_IRecipeFromIRecipeResponse);
     if (property) {
-      return sortObjectCollectionByKey(data, property as keyof Recipe)
+      return sortObjectCollectionByKey(data, property as keyof Recipe);
     }
     return data;
   } catch (error) {

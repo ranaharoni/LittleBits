@@ -12,3 +12,7 @@ export const Image = styled.Image(() => ({
   height: "100%",
   position: "absolute",
 }));
+
+export const BlurredImage = styled(Image)(() => ({
+  opacity: 0.3,
+}));

@@ -2,7 +2,7 @@
 
 import styled from "@emotion/native";
 
-export const ImageContainer = styled.View(({ theme }) => ({
+export const ImageContainer = styled.View(() => ({
   flex: 1,
   height: 200,
   flexDirection: "row",

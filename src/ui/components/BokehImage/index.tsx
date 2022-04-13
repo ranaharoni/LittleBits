@@ -1,7 +1,7 @@
 /** @format */
 
 import React from "react";
-import { Image } from "./styles";
+import { Image, BlurredImage } from "./styles";
 
 export interface BokehImageProps {
   src: string;
@@ -14,12 +14,11 @@ export const BokehImage = ({ src }: BokehImageProps) => (
         uri: src,
       }}
     />
-    <Image
+    <BlurredImage
       blurRadius={10}
       source={{
         uri: src,
       }}
-      style={{ opacity: 0.3 }}
     />
   </>
 );

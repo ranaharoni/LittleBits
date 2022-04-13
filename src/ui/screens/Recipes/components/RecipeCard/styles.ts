@@ -4,8 +4,6 @@ import styled from "@emotion/native";
 import { Animated } from "react-native";
 import LinearGradient from "react-native-linear-gradient";
 
-
-
 export const Card = styled(Animated.View)(({ theme }) => ({
   backgroundColor: theme.colors.white,
   flex: 1,

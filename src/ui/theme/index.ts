@@ -6,9 +6,6 @@ import { colors } from "./tokens/colors";
 import { spacing } from "./tokens/spacing";
 
 const colorScheme = Appearance.getColorScheme();
-if (colorScheme === "dark") {
-  // Use dark color scheme
-}
 
 const paletteSchemes = {
   light: {

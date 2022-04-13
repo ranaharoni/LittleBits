@@ -1,7 +1,6 @@
 /** @format */
 
 import React from "react";
-import { ScrollView } from "react-native";
 import { useNavigation } from "@react-navigation/core";
 import { addScreen } from "../../navigation/RootStack";
 import { RecipeCard } from "./components/RecipeCard";
@@ -13,6 +12,7 @@ import { SortingButton } from "./components/SortingButton";
 import { GenericLayout } from "../../layouts/GenericLayout";
 import { useRecoilValue } from "recoil";
 import { selectionState } from "./store/SortingMenu";
+import { ScrollView } from "./styles";
 
 const Recipes = () => {
   const sortBy = useRecoilValue(selectionState);
@@ -20,15 +20,13 @@ const Recipes = () => {
   const { data } = useRecipeList(sortBy as string);
   return (
     <GenericLayout>
-      <ScrollView
-        style={{ height: "100%" }}
-        contentInsetAdjustmentBehavior="automatic">
+      <ScrollView contentInsetAdjustmentBehavior="automatic">
         {data?.map((recipe, index) => (
           <RecipeCard
             key={recipe.id}
             order={index + 1}
             recipe={recipe}
-            onPress={(e) =>
+            onPress={() =>
               // @ts-ignore that same typing issue from before...
               navigation.navigate("RecipeDetails", {
                 recipe: displayRecipe(recipe),

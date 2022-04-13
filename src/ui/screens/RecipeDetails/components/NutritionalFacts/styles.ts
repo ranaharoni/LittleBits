@@ -1,22 +1,22 @@
 /** @format */
 
-import styled, { css } from "@emotion/native";
+import styled from "@emotion/native";
 
 export const BaseText = styled.Text(({ theme }) => ({
   color: theme.palette.textLighter,
   marginBottom: theme.spacing[3],
 }));
 
-export const Title = styled(BaseText)(({ theme }) => ({
+export const Title = styled(BaseText)(() => ({
   fontSize: 36,
   fontWeight: "800",
 }));
 
-export const Content = styled(BaseText)(({ theme }) => ({
+export const Content = styled(BaseText)(() => ({
   fontSize: 16,
 }));
 
-export const Value = styled(BaseText)(({ theme }) => ({
+export const Value = styled(BaseText)(() => ({
   fontSize: 14,
   fontWeight: "700",
 }));
@@ -27,7 +27,7 @@ export const Column = styled.View<{ variant: "right" | "left" }>(
     width: "10%",
     alignSelf: "flex-start",
     justifyContent: "center",
-    alignItems: `flex-${variant == "left" ? "start" : "end"}`,
+    alignItems: `flex-${variant === "left" ? "start" : "end"}`,
     paddingHorizontal: theme.spacing[1],
   }),
 );

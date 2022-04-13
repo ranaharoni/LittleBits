@@ -1,7 +1,12 @@
 /** @format */
 
 import React, { useRef, useEffect } from "react";
-import { GestureResponderEvent, Pressable, Animated, Easing } from "react-native";
+import {
+  GestureResponderEvent,
+  Pressable,
+  Animated,
+  Easing,
+} from "react-native";
 import { IRecipe } from "../../../../../app/Recipes/entities/Recipe";
 import { BokehImage } from "../../../../components/BokehImage";
 import { ElementHeader } from "../../../../components/ElementHeader";
@@ -17,7 +22,11 @@ export interface RecipeCardProps {
   onPress?: (event: GestureResponderEvent) => void;
 }
 
-export const RecipeCard = ({ order, recipe, onPress = () => {} }: RecipeCardProps) => {
+export const RecipeCard = ({
+  order,
+  recipe,
+  onPress = () => {},
+}: RecipeCardProps) => {
   const animatedVal = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
@@ -28,12 +37,12 @@ export const RecipeCard = ({ order, recipe, onPress = () => {} }: RecipeCardProp
         easing: Easing.in(Easing.elastic(0.8)),
         useNativeDriver: true,
       }).start();
-    }, 100 * order)
+    }, 100 * order);
   }, []);
 
   return (
     <Pressable onPress={onPress}>
-      <Card style={{ transform: [{scale: animatedVal}] }}>
+      <Card style={{ transform: [{ scale: animatedVal }] }}>
         <BokehImage src={recipe.image} />
         <Gradient
           start={{ x: 0, y: 0.2 }}
